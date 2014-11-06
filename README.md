@@ -1,11 +1,8 @@
-### Underscore homework
+# Notes and Course Demos
 
-Using the data from subreddit itookapicture
-http://www.reddit.com/r/itookapicture.json
+This is a public repo that contains the notes and code demos for learning backbonejs.
 
-Use at least 5 underscore methods (eg. _.pluck, _.each, _.template) to extract data onto a single page.
+You will find each lesson in a separate folder, labeled by day.
 
-requirements:
-
-1. The page must contain pictures (thumbnail) of at least the top 15 most upvoted pictures, with linkage to the source, title, and a link to the comments.
-2. The page must also include an aggregate of upvotes, and an average of upvotes per link.
+If you have any questions, or need support, please email:
+calvin@theironyard.com or nick@theironyard.com
