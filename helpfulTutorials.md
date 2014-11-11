@@ -12,4 +12,4 @@ Some Commonly ignored files:
 - node_modules
 - bower_components
 
-more content..
+If you have previously committed files that you actually want to ignore, you must delete them all, then recommit without the files and have a .gitignore with said files referenced.  You then can readd the files and they will be ignored.
