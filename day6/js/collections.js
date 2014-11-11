@@ -8,8 +8,6 @@ var TodoCollection = Backbone.Collection.extend({
     this.on("add", function(item) {
       console.log("item was added", item.toJSON());
     });
-
     
-
   }
 });

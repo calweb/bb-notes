@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Contacts</title>
+  <link rel="stylesheet" href="styles.css">
+  <script id="contactTemplate" type="text/template">
+    <div class="user-profile">
+
+        <img class="avatar" src="<%= photo %>" alt="<%= name %>" />
+          <div class="username"><%= name %></div>
+        <div class="bio">
+        	<%= bio %>
+        </div>
+          <div class="description">
+            <%= description %>
+        </div>
+    </div>
+
+
+</script>
+</head>
+<body>
+
+<div id="contacts"></div>
+<script>
+  var contacts = [
+        { name: "Calvin Webster", bio: "I love javascripts, that's all you need to know.", description: "Calvin likes to take long walks on the treadmill and enjoys watching sea turtles while they swim."},
+        { name: "Nick Bucciarelli", bio: "I love javascripts and fast cars, that's all you need to know.", description: "Nick likes to make life transformations and showing people how it's done!"},
+        { name: "Kelly Slater", bio: "I'm very good at surfing and I've won lots of world titles.", description: "Kelly or slats is as good as they get and he has been dominating the sport of surfing for quite some time now."},
+        { name: "Grace Hopper", bio: "I love programming on the Mark I", description: "Grace is a pretty amazing women that is considered one of the early pioneers of programming.  She coined the term 'debugging' by removing a moth from an early computer."}
+
+    ];
+</script>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/underscore/underscore.js"></script>
+<script src="node_modules/backbone/backbone.js"></script>
+
+<script src="model.js"></script>
+<script src="collection.js"></script>
+<script src="views.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
