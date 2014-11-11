@@ -52,4 +52,8 @@ Instead of manually downloading files and placing them in the right folders, whe
 
 If you've already installed some libraries with npm, but do not have a package.json file, you can create one by doing: ``` npm init ``` - which is a wizard that will walk you through creating a package.json without ever touching the file.
 
-If you want to add a library and want it to persist to ``` package.json ``, you simply must: ``` npm install <mylib> --save ``` for app dependencies and ``` npm install <mylib> --save-dev ``` for dev depenencies.
+If you want to add a library and want it to persist to ``` package.json ``, you simply must:
+  ``` npm install <mylib> --save ```
+  for app dependencies and
+  ``` npm install <mylib> --save-dev ```
+  for dev depenencies.
