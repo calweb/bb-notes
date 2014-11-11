@@ -1,0 +1,17 @@
+{
+  "name": "day7",
+  "version": "1.0.0",
+  "description": "Create a Dinner Menu for this evening with some basic styling.",
+  "main": "app.js",
+  "dependencies": {
+    "jquery": "^2.1.1",
+    "backbone": "^1.1.2",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
