@@ -32,7 +32,7 @@ var myBlog = {
     $target.html(tmpl);
   },
   renderPosts: function () {
-
+    
   },
   getPosts: function () {
     $.ajax({
