@@ -10,6 +10,8 @@ var ContactView = Backbone.View.extend({
   },
   initialize: function () {
     console.log("contact view made");
+    this.listenTo(this.model, 'change', this.render);
+    this.listenTo(this.model, 'hide', this.deleteModel);
 
   },
   render: function () {
@@ -35,13 +37,12 @@ var ContactsView = Backbone.View.extend({
    },
    initialize: function (options) {
      console.log(options);
-    //  this.collection.on("add", this.alert, this)
-    //  this.listenTo(this.collection.models, "add", this.alert);
+
+    //  this.listenTo(this.collection, "add", this.alert);
+
      this.render();
    },
-   alert: function () {
-     alert("hello");
-   },
+
    renderForm: function () {
 
    },
@@ -58,6 +59,7 @@ var ContactsView = Backbone.View.extend({
        description: this.$el.find(".createDescription").val()
      };
      var newContact = new Contact(rawForm);
+     newContact.save();
      this.collection.add(newContact);
      this.addContact(newContact);
      this.$el.find(".createName").val("");
@@ -68,6 +70,7 @@ var ContactsView = Backbone.View.extend({
    },
    addContact: function (contact) {
      var contactView = new ContactView({model: contact});
+
      this.$el.append(contactView.render().el);
    },
    addAllContacts: function () {
