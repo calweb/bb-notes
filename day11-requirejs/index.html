@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>RequireJS</title>
+  <link rel="stylesheet" href="css/styles.css">
+<script id="contactTemplate" type="text/template">
+    <div class="user-profile">
+    	<div class="view">
+        <img class="avatar" src="<%= photo %>" alt="<%= name %>" />
+          <div class="username"><%= name %></div>
+        <div class="bio">
+        	<%= bio %>
+        </div>
+          <div class="description">
+          <%= description %>
+        </div>
+<!-- <button class="destroy">delete</button> | <button class="editItem">Edit</button> -->
+      </div>
+    <!--   <div class="edit">
+      <input type="text" class="editName" value="<%= name %>">
+      <input type="text" class="editBio" value="<%= bio %>">
+      <input type="text" class="editDescription" value="<%= description %>">
+      <button class="update">Update</button>
+    </div> -->
+
+    </div>
+
+</script>
+</head>
+
+<body>
+<div id="contacts">
+  <button class="addProfile">Add Profile</button>
+  <div class="profileForm">
+    <input type="text" class="newName">
+    <input type="text" class="newBio">
+    <input type="text" class="newDescription">
+    <button class="createProfile">Create</button>
+  </div>
+</div>
+<!--
+ The only script tag you will need is loading the requirejs library
+ Also required is the data-main attribute that needs to point to your requirejs config.
+ -->
+<script data-main="js/main" src="node_modules/requirejs/require.js"></script>
+</body>
+</html>
