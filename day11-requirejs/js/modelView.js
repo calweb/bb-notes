@@ -1,3 +1,6 @@
+// if, in your require.config did not create names for all the files, just libraries
+// you would reference the dependencies like so:
+// define('backbone', 'jquery', 'underscore', 'js/model')
 define(['backbone', 'jquery','underscore', 'Contact'], function (Backbone, $, _, Contact) {
   var ContactView = Backbone.View.extend({
     tagName: 'article',
