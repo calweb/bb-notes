@@ -1,0 +1,17 @@
+{
+  "name": "day9-crud-server",
+  "version": "1.0.0",
+  "description": "Convert your Crud menu assignment from previous night to use the provided server",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^2.1.1",
+    "underscore": "^1.7.0",
+    "backbone": "^1.1.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
