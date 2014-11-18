@@ -1,0 +1,18 @@
+{
+  "name": "day12-model-validate",
+  "version": "1.0.0",
+  "description": "Add Model Validation to your Model, so that you can catch validation errors:",
+  "main": "index.js",
+  "dependencies": {
+    "jquery": "^2.1.1",
+    "backbone": "^1.1.2",
+    "requirejs": "^2.1.15",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC"
+}
