@@ -21,9 +21,14 @@ require.config({
   }
 });
 
-require(['ContactsView', 'jquery'], function (ContactsView, $) {
+require(['ContactsView', 'ContactCollection', 'jquery'], function (ContactsView,ContactCollection, $) {
 
   $(function () {
-    var appView = new ContactsView();
+    var contacts = new ContactCollection();
+    contacts.fetch().then(function () {
+        var appView = new ContactsView({collection:contacts});
+    });
+
+
   });
 });

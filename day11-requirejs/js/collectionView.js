@@ -10,7 +10,7 @@ define([
   var ContactsView = Backbone.View.extend({
     el: $("#contacts"),
     events: {
-      'click .addProfile': 'showProfile',
+      'click .addProfile': 'toggleCreate',
       'click .createProfile': 'createProfile'
     },
     initialize: function () {
@@ -19,13 +19,8 @@ define([
       if(!this.collection) {
         this.collection = new ContactCollection();
       }
-
-      this.collection.fetch().then(function (collection) {
-        console.log(collection);
-        self.render();
-      });
-
-      
+      this.addAll();
+      this.listenTo(this.collection, 'add', this.addOne);
 
     },
     render: function () {
@@ -39,8 +34,8 @@ define([
     addAll: function () {
       _.each(this.collection.models, this.addOne, this);
     },
-    showProfile: function () {
-      this.$el.find('.profileForm').addClass('editing');
+    toggleCreate: function () {
+      this.$el.find('.profileForm').toggleClass('editing');
     },
     createProfile: function () {
       var newProfile = {
@@ -51,6 +46,8 @@ define([
       var newModel = new Contact(newProfile);
       newModel.save();
       this.collection.add(newModel);
+      this.$el.find('.profileForm input').val("");
+      this.toggleCreate();
     }
   });
 
