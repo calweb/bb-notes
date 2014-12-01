@@ -1,0 +1,96 @@
+
+
+
+[class*="entypo-"]:before {
+  font-family: 'entypo', sans-serif;
+}
+
+body {
+  background: #fffcdd;
+  padding: 0;
+  margin: 0;
+}
+
+/* .profileForm {
+display:none;
+} */
+.profileForm.editing {
+  display:block;
+}
+
+.user-profile {
+  margin: auto;
+  width: 20em;
+  margin-bottom: 10px;
+  padding:10px;
+  background: #fff;
+  border-radius: .3em;
+}
+
+.user-profile  .username {
+  margin: auto;
+  margin-top: -4.40em;
+  margin-left: 5.80em;
+  color: #658585;
+  font-size: 1.53em;
+  font-family: "Coda", sans-serif;
+  font-weight: bold;
+}
+.user-profile  .bio {
+  margin: auto;
+  display: inline-block;
+  margin-left: 10.43em;
+  color: #e76043;
+  font-size: .87em;
+  font-family: "varela round", sans-serif;
+}
+.user-profile .description {
+  margin: auto;
+  margin-top: 1.45em;
+
+  padding:10px;
+  color: #c0c5c5;
+  font-size: .87em;
+  font-family: "varela round", sans-serif;
+}
+.user-profile img.avatar {
+  padding: .7em;
+  margin-left: .3em;
+  margin-top: .3em;
+  height: 6.23em;
+  width: 6.23em;
+  border-radius: 18em;
+}
+
+
+
+.user-profile span {
+  font-family: "varela round", sans-serif;
+  color: #e3eeee;
+  white-space: nowrap;
+  font-size: 1.27em;
+  font-weight: bold;
+}
+.user-profile span:hover {
+  color: #daebea;
+}
+article .edit {
+  display:none;
+}
+article.editing .view {
+  display:none;
+}
+article.editing .edit {
+  display:block;
+}
+
+ul.nav {
+  margin: 0;
+  width: 100%;
+  background: #f5f5f5;
+  margin-bottom: 10px;
+}
+ul.nav li {
+  display: inline-block;
+  padding: 10px;
+}

@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Routing</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script id="contactTemplate" type="text/template">
+  <div class="user-profile">
+  <div class="view">
+  <img class="avatar" src="<%= photo %>" alt="<%= name %>" />
+  <div class="username"><%= name %></div>
+  <div class="bio">
+  <%= bio %>
+  </div>
+  <div class="description">
+  <%= description %>
+  </div>
+
+
+  </script>
+  <script id="newContact" type="text/template">
+  <div class="profileForm">
+  <input type="text" class="newName">
+  <input type="text" class="newBio">
+  <input type="text" class="newDescription">
+  <button class="save">Create</button>
+  </div>
+  </script>
+  <script id="aboutTmpl" type="text/template">
+  <h1>This is just demoing the about page</h1>
+  <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Distinctio, sequi. Quia dolorum eos soluta amet laborum! Voluptatibus, accusamus repellendus velit voluptatum molestiae nostrum modi aliquam temporibus voluptate, placeat, ratione sapiente!</p>
+  </script>
+</head>
+<body>
+  <ul class="nav">
+    <li><a href="/#home">Home</a></li>
+    <li><a href="/#about">About</a></li>
+    <li><a href="/#add">Add Contact</a></li>
+  </ul>
+  <div class="container">
+    
+  </div>
+  <script>
+  var peeps = [
+  { "name": "Calvin Webster", "bio": "I love javascripts, that's all you need to know.", "description": "Calvin likes to take long walks on the treadmill and enjoys watching sea turtles while they swim."},
+  { "name": "Nick Bucciarelli", "bio": "I love javascripts and fast cars, that's all you need to know.", "description": "Nick likes to make life transformations and showing people how it's done!"},
+  { "name": "Kelly Slater", "bio": "I'm very good at surfing and I've won lots of world titles.", "description": "Kelly or slats is as good as they get and he has been dominating the sport of surfing for quite some time now."},
+  { "name": "Grace Hopper", "bio": "I love programming on the Mark I", "description": "Grace is a pretty amazing women that is considered one of the early pioneers of programming.  She coined the term 'debugging' by removing a moth from an early computer."}
+
+  ];
+</script>
+<script data-main="js/main" src="node_modules/requirejs/require.js"></script>
+</body>
+</html>
