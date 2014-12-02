@@ -1,0 +1,11 @@
+{
+	"paths": [
+		"jquery/**",
+		"dustjs-linkedin/**",
+		"bootstrap/**",
+		"requirejs/**",
+		"backbone/**",
+		"backbone-validation/**",
+		"underscore/**"
+	]
+}

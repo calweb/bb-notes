@@ -1,0 +1,18 @@
+<div class="col-md-2">
+	Name: {name}
+</div>
+<div class="col-md-5">
+	Description: {description}
+</div>
+<div class="col-md-2">
+	Price: {price}
+</div>
+<div class="col-md-3">
+	<button class="btn btn-default" data-action="edit">Edit</button>
+	<button class="btn btn-default" data-action="revert">Revert</button>
+	<button class="btn btn-danger" data-action="delete">Delete</button>
+
+</div>
+
+
+
