@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Marionette Introduction</title>
+</head>
+<link rel="stylesheet" href="css/bootstrap.css">
+<script type="text/template" id="postViewTmpl">
+  <h2><%= title %></h2>
+  <p><%= content %></p>
+</script>
+<script type="text/template" id="formViewTmpl">
+  <h2><input type="text" placeholder="Post Title" id="title"></h2>
+  <p><textarea type="text" placeholder="Post Content" id="content"></textarea></p>
+  <button>Create Post</button>
+</script>
+<script type="text/template" id="emptyViewTmpl">
+  <h1>There are no posts currently.</h1>
+</script>
+<script type="text/template" id="headerViewTmpl">
+  <h2>Header Area</h2>
+</script>
+<script type="text/template" id="footerViewTmpl">
+<h2>Footer Area</h2>
+</script>
+<script type="text/template" id="contentViewTmpl">
+  <div id="content" class="col-md-8"></div>
+  <div id="sidebar" class="col-md-4"></div>
+</script>
+<script type="text/template"></script>
+<body>
+<header></header>
+
+<div class="container">
+  <div class="row">
+      
+  </div>
+</div>
+
+<footer></footer>
+<script src="node_modules/jquery/dist/jquery.js"></script>
+<script src="node_modules/underscore/underscore.js"></script>
+<script src="node_modules/backbone/backbone.js"></script>
+<script src="node_modules/backbone.marionette/lib/backbone.marionette.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
