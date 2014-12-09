@@ -1,0 +1,29 @@
+{
+  "name": "backbone-sandbox",
+  "version": "1.0.0",
+  "author": "Kyle Goggin",
+  "dependencies": {
+    "backbone": "^1.1.2",
+    "backbone-validation": "^0.9.1",
+    "backbone.marionette": "^2.2.2",
+    "bootstrap": "^3.3.0",
+    "dustjs-linkedin": "^2.5.1",
+    "express": "^4.10.1",
+    "jquery": "^2.1.1",
+    "path": "^0.4.9",
+    "requirejs": "^2.1.15",
+    "underscore": "^1.7.0"
+  },
+  "devDependencies": {
+    "grunt": "~0.4",
+    "grunt-contrib-watch": "~0.5",
+    "grunt-contrib-symlink": "~0.3",
+    "grunt-dust": "~0.9",
+    "load-grunt-tasks": "^1.0.0",
+    "open": "0.0.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@bitbucket.org:akgoggin/backbone.git"
+  }
+}
