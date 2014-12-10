@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Composite View</title>
+  <script type="text/template" id="book-tmpl">
+    <%= title %> -
+    <%= author %>
+  </script>
+  <script type="text/template" id="composite-tmpl">
+      <h1>My Books</h1>
+      <ul>
+
+      </ul>
+  </script>
+  <script type="text/template" id="no-book-tmpl">
+    <td colspan="4"><p>Sorry, there are no books</p></td>
+  </script>
+</head>
+<body>
+  <div id="content"></div>
+  <script src="node_modules/jquery/dist/jquery.js"></script>
+  <script src="node_modules/underscore/underscore.js"></script>
+  <script src="node_modules/backbone/backbone.js"></script>
+  <script src="node_modules/backbone.marionette/lib/backbone.marionette.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

@@ -8,7 +8,7 @@ module.exports = function (grunt) {
     dust: {
       amd: {
         files: {
-          'public/js/lib/compiled-amd.js': './views/**/*.dust'
+          'public/js/lib/compiled-amd.js': './views/**/*.html'
         },
         options: {
           wrapperOptions: {

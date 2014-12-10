@@ -107,13 +107,13 @@ define(['jquery','backbone', 'marionette', 'dust', 'app', 'books', 'marionette-d
       };
 
       // define an AppRouter constructor
+      // and assign the routes and controller
       var router = Marionette.AppRouter.extend({
         appRoutes: routes,
         controller: appRouterController
       });
 
       // create a new instance of the AppRouter
-      // and assign the routes and controller
       var appRouter = new router();
     },
     onAboutNavigated: function () {

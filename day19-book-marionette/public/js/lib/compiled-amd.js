@@ -1,5 +1,5 @@
 define(["dustjs-linkedin"], function(dust) {
-  // ./views/about-view.dust
+  // ./views/about-view.html
   (function() {
     dust.register("about-view", body_0);
 
@@ -8,7 +8,7 @@ define(["dustjs-linkedin"], function(dust) {
     }
     return body_0;
   })();
-  // ./views/book-view.dust
+  // ./views/book-view.html
   (function() {
     dust.register("book-view", body_0);
 
@@ -17,7 +17,7 @@ define(["dustjs-linkedin"], function(dust) {
     }
     return body_0;
   })();
-  // ./views/content-view.dust
+  // ./views/content-view.html
   (function() {
     dust.register("content-view", body_0);
 
@@ -26,7 +26,7 @@ define(["dustjs-linkedin"], function(dust) {
     }
     return body_0;
   })();
-  // ./views/footer-view.dust
+  // ./views/footer-view.html
   (function() {
     dust.register("footer-view", body_0);
 
@@ -35,7 +35,7 @@ define(["dustjs-linkedin"], function(dust) {
     }
     return body_0;
   })();
-  // ./views/form-view.dust
+  // ./views/form-view.html
   (function() {
     dust.register("form-view", body_0);
 
@@ -44,7 +44,7 @@ define(["dustjs-linkedin"], function(dust) {
     }
     return body_0;
   })();
-  // ./views/header-view.dust
+  // ./views/header-view.html
   (function() {
     dust.register("header-view", body_0);
 
@@ -53,7 +53,7 @@ define(["dustjs-linkedin"], function(dust) {
     }
     return body_0;
   })();
-  // ./views/help-view.dust
+  // ./views/help-view.html
   (function() {
     dust.register("help-view", body_0);
 
@@ -62,12 +62,21 @@ define(["dustjs-linkedin"], function(dust) {
     }
     return body_0;
   })();
-  // ./views/no-books.dust
+  // ./views/no-books.html
   (function() {
     dust.register("no-books", body_0);
 
     function body_0(chk, ctx) {
       return chk.write("<h1>There are no books currently.</h1><p> Please use the form provided to add new books. </p>");
+    }
+    return body_0;
+  })();
+  // ./views/test.html
+  (function() {
+    dust.register("test", body_0);
+
+    function body_0(chk, ctx) {
+      return chk.write("<h1>hello world</h1>");
     }
     return body_0;
   })();
@@ -239,5 +248,26 @@ define(["dustjs-linkedin"], function(dust) {
       return rendered;
     }
   });
-  return ["about-view", "book-view", "content-view", "footer-view", "form-view", "header-view", "help-view", "no-books"];
+  define("test", function() {
+    return function(locals, callback) {
+      var rendered;
+
+      dust.render("test", locals, function(err, result) {
+        if (typeof callback === "function") {
+          try {
+            callback(err, result);
+          } catch (e) {}
+        }
+
+        if (err) {
+          throw err
+        } else {
+          rendered = result;
+        }
+      });
+
+      return rendered;
+    }
+  });
+  return ["about-view", "book-view", "content-view", "footer-view", "form-view", "header-view", "help-view", "no-books", "test"];
 });

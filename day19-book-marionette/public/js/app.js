@@ -1,7 +1,7 @@
 define(['jquery', 'backbone', 'marionette', 'books', 'views'], function ($, Backbone, Marionette, Books, Views) {
 
 
-    window.BooksApp = new Marionette.Application();
+    var BooksApp = new Marionette.Application();
 
     BooksApp.addRegions({
       appViewRegion: '#app'
