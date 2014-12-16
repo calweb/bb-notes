@@ -1,3 +1,5 @@
+To Make sure the pairing goes smoothly, in Bitbucket, add either Nick or Calvin, not both, so that you have room to add your partner as a collaborator.
+
 Pairings:
 
 Brooke Casey/Stephen Goeddel
