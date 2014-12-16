@@ -1,10 +1,11 @@
 define(function (require) {
-  var models = require('models');
+  var Book = require('models').BookModel;
+  var BookCollection = require('models').BooksCollection;
 
   describe('Book Model', function () {
 
     beforeEach(function () {
-      this.myModel = new models.BookModel();
+      this.myModel = new Book();
     });
 
     it('should be an instance of Backbone.Model', function () {
@@ -43,9 +44,9 @@ define(function (require) {
 
   describe('Book Collection', function () {
     beforeEach(function () {
-      this.modelA = new models.BookModel();
-      this.modelT = new models.BookModel();
-      this.myCollection = new models.BooksCollection();
+      this.modelA = new Book();
+      this.modelT = new Book();
+      this.myCollection = new BookCollection();
       this.myCollection.add([this.modelA,this.modelT]);
     });
 
