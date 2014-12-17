@@ -5,6 +5,7 @@ define(['jquery','backbone', 'marionette', 'dust', 'app', 'books', 'marionette-d
       'click button': 'delete'
     },
     delete: function () {
+      
       this.$el.remove();
       this.model.destroy();
     }

@@ -1,11 +1,15 @@
 define(function (require) {
-  var Book = require('models').BookModel;
-  var BookCollection = require('models').BooksCollection;
+  var Book = require('books').BookModel;
+  var BookCollection = require('books').BooksCollection;
 
   describe('Book Model', function () {
 
     beforeEach(function () {
       this.myModel = new Book();
+      this.bookStub = sinon.stub(this.myModel, 'save');
+    });
+    afterEach(function () {
+      this.bookStub.restore();
     });
 
     it('should be an instance of Backbone.Model', function () {
@@ -29,7 +33,10 @@ define(function (require) {
 
       this.myModel.set({title: 'Cool Book by Brooke'});
       expect(this.myModel.get('title')).to.be.equal('Cool Book by Brooke');
+      this.myModel.set({title: 'Cool Book by Bill'});
+      expect(this.myModel.get('title')).to.be.equal('Cool Book by Bill');
       expect(this.myModel.attributes).to.have.property('title');
+      expect(this.bookStub).to.have.been.calledTwice;
     });
 
     it('should validate if title is empty and have an error property', function () {
@@ -44,8 +51,11 @@ define(function (require) {
 
   describe('Book Collection', function () {
     beforeEach(function () {
+
       this.modelA = new Book();
       this.modelT = new Book();
+      this.modelAStub = sinon.stub(this.modelA, 'save');
+      this.modelTStub = sinon.stub(this.modelT, 'save');
       this.myCollection = new BookCollection();
       this.myCollection.add([this.modelA,this.modelT]);
     });
@@ -61,6 +71,7 @@ define(function (require) {
     it('should sort collection based on title', function () {
       this.modelA.set({title: 'a title'});
       this.modelT.set({title: 'z title'});
+      expect(this.modelAStub).to.have.been.calledOnce;
       expect(this.myCollection.at(0).get('title')).to.be.equal('a title');
     });
 
