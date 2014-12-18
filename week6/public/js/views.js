@@ -5,7 +5,7 @@ define(['jquery','backbone', 'marionette', 'dust', 'app', 'books', 'marionette-d
       'click button': 'delete'
     },
     delete: function () {
-      
+
       this.$el.remove();
       this.model.destroy();
     }
@@ -35,6 +35,11 @@ define(['jquery','backbone', 'marionette', 'dust', 'app', 'books', 'marionette-d
     events: {
       'click button': 'createBook'
     },
+    initialize: function () {
+      if(!this.model) {
+        this.model = new Books.BookModel();
+      }
+    },
     ui: {
       title: '#title',
       content: '#content',
@@ -43,15 +48,15 @@ define(['jquery','backbone', 'marionette', 'dust', 'app', 'books', 'marionette-d
       pubDate: '#pubDate'
     },
     createBook: function () {
-      var newPost = new Books.BookModel({
+      this.model.set({
         title: this.ui.title.val(),
         content: this.ui.content.val(),
         photo: this.ui.photo.val(),
         author: this.ui.author.val(),
         pubDate: this.ui.pubDate.val()
       });
-      newPost.save();
-      this.collection.add(newPost);
+    
+      this.collection.add(this.model);
       this.ui.title.val('');
       this.ui.content.val('');
       this.ui.photo.val('');

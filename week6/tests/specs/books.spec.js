@@ -57,7 +57,7 @@ define(function (require) {
       this.modelAStub = sinon.stub(this.modelA, 'save');
       this.modelTStub = sinon.stub(this.modelT, 'save');
       this.myCollection = new BookCollection();
-      this.myCollection.add([this.modelA,this.modelT]);
+
     });
 
     it('should be an instance of Backbone.Collection', function () {
@@ -65,22 +65,49 @@ define(function (require) {
     });
 
     it('should have correct amount of models', function () {
+      this.myCollection.add([this.modelA,this.modelT]);
       expect(this.myCollection.length).to.be.equal(2);
     });
 
     it('should sort collection based on title', function () {
-      this.modelA.set({title: 'a title'});
-      this.modelT.set({title: 'z title'});
+      this.modelA.set({title: 'a title', author: 'Zoolander'});
+      this.modelT.set({title: 'z title', author: 'Aldous Huxley'});
+      this.myCollection.add([this.modelA,this.modelT]);
+
+
       expect(this.modelAStub).to.have.been.calledOnce;
       expect(this.myCollection.at(0).get('title')).to.be.equal('a title');
     });
 
     it('should properly remove models from collection', function () {
+      this.myCollection.add([this.modelA,this.modelT]);
       expect(this.myCollection.length).to.be.equal(2);
       this.myCollection.remove(this.modelA);
       expect(this.myCollection.length).to.be.equal(1);
     });
 
+    describe('Collection Fetch', function () {
+      before(function () {
+        this.ajaxStub = sinon.stub($, 'ajax').yieldsTo('success', [
+        { title: 'Book Title', author: 'A Person'},
+        { title: 'Another Book Title', author: 'Copycat'}
+        ]);
+        this.bookCollection = new BookCollection();
+      });
+
+      it('should have correct amount of models in book collection', function () {
+        expect(this.bookCollection.length).to.be.zero;
+        this.bookCollection.fetch();
+        expect(this.bookCollection.length).to.be.equal(2);
+      });
+      it('should have right data in each model', function () {
+        this.bookCollection.fetch();
+        expect(this.bookCollection.at(0).get('title')).to.be.equal('Another Book Title');
+        expect(this.bookCollection.at(1).get('author')).to.be.equal('A Person');
+      });
+
+
+    });
 
 
   });

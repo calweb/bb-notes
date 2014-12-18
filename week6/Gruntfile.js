@@ -50,6 +50,16 @@ module.exports = function (grunt) {
             dest: 'public/js/vendor'
           }
         ]
+      },
+      tests: {
+        files: [
+          {
+            expand: true,
+            cwd: 'node_modules',
+            src: ['*'],
+            dest: 'tests/lib'
+          }
+        ]
       }
     },
     // connect: {
@@ -72,13 +82,25 @@ module.exports = function (grunt) {
         }
       }
     },
-    mocha_phantomjs: {
-      all: {
-        options: {
-          run: true,
-          urls: ['http://<%= connect.options.hostname %>:<%= connect.test.options.port %>/index.html']
-        }
+    mocha_require_phantom: {
+      options: {
+        base: 'tests',
+        keepAlive: true,
+        port: 9001,
+        main: 'SpecRunner.js',
+        requireLib: 'lib/requirejs/require.js',
+        files: ['tests/specs/*.js'],
       }
+    },
+    mocha_phantomjs: {
+      all: ['tests/**/*.html']
+      // all: {
+      //
+      //   options: {
+      //     run: true,
+      //     urls: ['http://<%= connect.options.hostname %>:<%= connect.test.options.port %>/index.html']
+      //   }
+      // }
     },
 
     // Mocha
@@ -88,10 +110,11 @@ module.exports = function (grunt) {
         src: ['tests/index.html'],
 
         options: {
-          port: 9002,
-
+          port: 9001,
+          log: true,
           reporter: 'Nyan',
-          run: true
+          run: true,
+          // urls: ['http://localhost:<%= connect.test.options.port %>/index.html']
         }
       }
 
@@ -109,8 +132,10 @@ module.exports = function (grunt) {
 
 
       grunt.task.run([
-        'connect:test',
-        'mocha_phantomjs'
+        'mocha_require_phantom'
+        // 'connect:test',
+        // 'mocha:test',
+        // 'mocha_phantomjs'
         ]);
       });
 

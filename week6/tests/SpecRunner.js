@@ -1,21 +1,21 @@
 require.config({
-  baseUrl: '../',
+  // baseUrl: '',
   paths: {
-    'jquery'        : 'node_modules/jquery/dist/jquery',
-    'underscore'    : 'node_modules/underscore/underscore',
-    'backbone'      : 'node_modules/backbone/backbone',
-    'marionette'    : 'node_modules/backbone.marionette/lib/backbone.marionette',
-    'dustjs-linkedin': 'node_modules/dustjs-linkedin/dist/dust-full',
-    'marionette-dust': 'node_modules/marionette-dust/src/amd/backbone.marionette.dust',
-    'templates'     : 'public/js/lib/compiled-amd',
-    'sinon'         : 'node_modules/sinon/lib/sinon-1.12.2',
-    'sinon-chai'    : 'node_modules/sinon-chai/lib/sinon-chai',
-    'mocha'         : 'node_modules/mocha/mocha',
-    'chai'          : 'node_modules/chai/chai',
-    'chai-jquery'   : 'node_modules/chai-jquery/chai-jquery',
-    'books'        : 'public/js/books',
-    'views'         : 'public/js/views',
-    'app'           : 'public/js/app'
+    'jquery'        : 'lib/jquery/dist/jquery',
+    'underscore'    : 'lib/underscore/underscore',
+    'backbone'      : 'lib/backbone/backbone',
+    'marionette'    : 'lib/backbone.marionette/lib/backbone.marionette',
+    'dustjs-linkedin': 'lib/dustjs-linkedin/dist/dust-full',
+    'marionette-dust': 'lib/marionette-dust/src/amd/backbone.marionette.dust',
+    'templates'     : '../public/js/lib/compiled-amd',
+    'sinon'         : 'lib/sinon/lib/sinon-1.12.2',
+    'sinon-chai'    : 'lib/sinon-chai/lib/sinon-chai',
+    'mocha'         : 'lib/mocha/mocha',
+    'chai'          : 'lib/chai/chai',
+    'chai-jquery'   : 'lib/chai-jquery/chai-jquery',
+    'books'        : '../public/js/books',
+    'views'         : '../public/js/views',
+    'app'           : '../public/js/app'
   },
   shim: {
     'mocha': {
@@ -52,9 +52,9 @@ define(['jquery', 'mocha', 'chai', 'chai-jquery', 'sinon', 'sinon-chai'],functio
     'specs/views.spec.js'
     ], function(require) {
 
-      mocha.run();
+      if (typeof mochaPhantomJS !== "undefined") { mochaPhantomJS.run(); }
+        else { mocha.run(); }
 
     });
 
   });
-  
