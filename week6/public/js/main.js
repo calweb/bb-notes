@@ -35,13 +35,13 @@ require(['jquery', 'backbone', 'marionette', 'app', 'books', 'views'], function 
 				someMethod: function () {
 					// do something here
 				}
-			}
+			};
 			var router = Marionette.AppRouter({
 				appRoutes: routes,
 				controller: controller
-			})
+			});
 			var appRouter = new router();
-		})
+		});
 	BooksApp.start();
 	Backbone.history.start({pushState: true});
 	});

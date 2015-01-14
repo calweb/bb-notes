@@ -4,6 +4,4 @@ This is a public repo that contains the notes and code demos for learning backbo
 
 You will find each lesson in a separate folder, labeled by day.
 
-If you have any questions, or need support, please email:
-
-calvin@theironyard.com or nick@theironyard.com
+If you have any questions, or need support, please submit an issue.

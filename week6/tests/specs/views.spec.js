@@ -92,7 +92,9 @@ define(function (require) {
         });
         afterEach(function () {
           this.saveBook.restore();
-          // $fixture.remove();
+        });
+        after(function () {
+          $fixture.remove();
         });
         it('saves the model', function () {
           $fixture.find('button').click();

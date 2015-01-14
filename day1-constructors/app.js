@@ -1,6 +1,3 @@
-// nick@theironyard.com
-// calvin@theironyard.com
-// sally@theironyard.com - she does not need access to bitbucket
 
 console.log("Hello World!");
 
@@ -62,7 +59,7 @@ while( broTwo.health > 0 && broOne.health > 0 ) {
   }
   if(broOne.health > 0 && broOne.health <= 0){
     console.log(broOne.name + " wins the beer!");
-  }  
+  }
 }
 
 Bro.prototype.look = function() {
